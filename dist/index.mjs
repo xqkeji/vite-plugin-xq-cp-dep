@@ -1,5 +1,5 @@
 /*!
- * vite-plugin-xq-cp-dep v1.0.4 (http://xqkeji.cn/)
+ * vite-plugin-xq-cp-dep v1.0.5 (http://xqkeji.cn/)
  * Author xqkeji.cn
  * LICENSE SSPL-1.0
  * Copyright 2023 xqkeji.cn
@@ -33,8 +33,7 @@ function xqCpDep() {
           }
         }
       }
-      let srcDir = path.join(root, "src");
-      let assetsDir = path.join(srcDir, "assets");
+      let assetsDir = path.join(root, "assets");
       let destAssetsDir = path.join(publicDir, "assets");
       if (!fs.existsSync(publicDir)) {
         fs.mkdirSync(publicDir);

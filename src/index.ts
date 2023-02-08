@@ -34,8 +34,7 @@ function xqCpDep():Plugin{
 					
 				}
 			}
-			let srcDir=path.join(root,'src')
-			let assetsDir=path.join(srcDir,'assets')
+			let assetsDir=path.join(root,'assets')
 			let destAssetsDir=path.join(publicDir,'assets')
 			if(!fs.existsSync(publicDir))
 			{

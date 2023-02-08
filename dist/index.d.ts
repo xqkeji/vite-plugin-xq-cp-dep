@@ -1,5 +1,5 @@
 /*!
- * vite-plugin-xq-cp-dep v1.0.4 (http://xqkeji.cn/)
+ * vite-plugin-xq-cp-dep v1.0.5 (http://xqkeji.cn/)
  * Author xqkeji.cn
  * LICENSE SSPL-1.0
  * Copyright 2023 xqkeji.cn
