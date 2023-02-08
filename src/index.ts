@@ -11,11 +11,11 @@ function xqCpDep():Plugin{
 		name: 'xq-cp-dep',
 		// @ts-ignore
 		config(config) {
+			let root:string=config.root as string
+			let publicDir=path.join(root,'public')
 			if(Object.prototype.hasOwnProperty.call(pkg,"dependencies"))
 			{
 				const deps=pkg.dependencies
-				let root:string=config.root as string
-				let publicDir=path.join(root,'public')
 				if(!fs.existsSync(publicDir))
 				{
 					fs.mkdirSync(publicDir)
@@ -34,7 +34,21 @@ function xqCpDep():Plugin{
 					
 				}
 			}
-			
+			let srcDir=path.join(root,'src')
+			let assetsDir=path.join(srcDir,'assets')
+			let destAssetsDir=path.join(publicDir,'assets')
+			if(!fs.existsSync(publicDir))
+			{
+				fs.mkdirSync(publicDir)
+			}
+			if(fs.existsSync(assetsDir)&&!fs.existsSync(destAssetsDir))
+			{
+				fs.cp(assetsDir,destAssetsDir, {recursive: true},(err) => {
+					if (err) {
+						console.error(err);
+					}
+				});
+			}
 		}
 	};	
 }

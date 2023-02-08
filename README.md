@@ -1,8 +1,8 @@
 # vite-plugin-xq-cp-dep
 
-A vite copy all package.json config item 'dependencies' to public directory plugin.
+A vite copy all package.json config item 'dependencies' and project directory 'src/assets' to public directory plugin.
 
-一个将package.json配置文件中配置的'dependencies'的所有依赖包自动复制到public目录的插件。
+一个将package.json配置文件中配置的'dependencies'的所有依赖包和项目目录'src/assets'自动复制到public目录的插件。
 
 ## 安装
 ```bash
@@ -65,3 +65,4 @@ package.json配置示例：
 
 ### 如果复制的目录目标目录已经存在，将会跳过操作。
 ### 例如：复制'node_modules/bootstrap'目录到public目录下时，'public/bootstrap'目录已经存在，将会被跳过。如果需要更新，则需要将'public/bootstrap'手动删除。
+### 如果项目目录'src/assets'存在，整个目录也会被复制到public目录下。

@@ -1,7 +1,7 @@
 {
 	"name": "vite-plugin-xq-cp-dep",
-	"version": "1.0.3",
-	"description": "A vite copy all package.json config item 'dependencies' to public directory plugin.一个复制package.json的依赖包到公共目录下的Vite3插件。",
+	"version": "1.0.4",
+	"description": "A vite copy all package.json config item 'dependencies' and project directory 'src/assets' to public directory plugin.一个将package.json配置文件中配置的'dependencies'的所有依赖包和项目目录'src/assets'自动复制到public目录的插件。",
 	"type": "module",
 	"files": [
 		"dist"
@@ -28,7 +28,8 @@
 		"vite-plugin",
 		"vite-cp",
 		"cp-dependencies-to-public",
-		"cp-to-public"
+		"cp-to-public",
+		"cp-src-assets-to-public"
 	],
 	"author": "xqkeji.cn",
 	"license": "SSPL-1.0",

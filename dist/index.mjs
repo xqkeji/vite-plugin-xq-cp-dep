@@ -1,8 +1,8 @@
 /*!
- * vite-plugin-xq-cp-dep v1.0.3 (http://xqkeji.cn/)
+ * vite-plugin-xq-cp-dep v1.0.4 (http://xqkeji.cn/)
  * Author xqkeji.cn
  * LICENSE SSPL-1.0
- * Copyright 2022 xqkeji.cn
+ * Copyright 2023 xqkeji.cn
  */
  import path from 'path';
 import fs from 'fs';
@@ -14,10 +14,10 @@ function xqCpDep() {
   return {
     name: "xq-cp-dep",
     config(config) {
+      let root = config.root;
+      let publicDir = path.join(root, "public");
       if (Object.prototype.hasOwnProperty.call(pkg, "dependencies")) {
         const deps = pkg.dependencies;
-        let root = config.root;
-        let publicDir = path.join(root, "public");
         if (!fs.existsSync(publicDir)) {
           fs.mkdirSync(publicDir);
         }
@@ -32,6 +32,19 @@ function xqCpDep() {
             });
           }
         }
+      }
+      let srcDir = path.join(root, "src");
+      let assetsDir = path.join(srcDir, "assets");
+      let destAssetsDir = path.join(publicDir, "assets");
+      if (!fs.existsSync(publicDir)) {
+        fs.mkdirSync(publicDir);
+      }
+      if (fs.existsSync(assetsDir) && !fs.existsSync(destAssetsDir)) {
+        fs.cp(assetsDir, destAssetsDir, { recursive: true }, (err) => {
+          if (err) {
+            console.error(err);
+          }
+        });
       }
     }
   };
