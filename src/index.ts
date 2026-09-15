@@ -12,8 +12,12 @@ const node_modules_path=path.resolve(_dirname, '../../../node_modules');
 function xqCpDep():Plugin{
 	return {
 		name: 'xq-cp-dep',
+		// 必须在 configResolved 里读 root：config 钩子阶段 root 尚未解析，
+		// 用户未显式设置 root 时 config.root 为 undefined，path.join 会抛
+		// "The 'path' argument must be of type string. Received undefined"。
+		// configResolved 阶段 root 已被 Vite 解析为绝对路径，永不为 undefined。
 		// @ts-ignore
-		config(config) {
+		configResolved(config) {
 			let root:string=config.root as string
 			let publicDir=path.join(root,'public')
 			if(Object.prototype.hasOwnProperty.call(pkg,"dependencies"))

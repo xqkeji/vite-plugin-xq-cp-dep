@@ -1,6 +1,6 @@
 {
 	"name": "vite-plugin-xq-cp-dep",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "A vite plugin that copies all package.json 'dependencies' and project 'assets' into the public directory.一个将 package.json 的 dependencies 全部依赖包和项目 assets 自动复制到 public 目录的 Vite 插件。",
 	"type": "module",
 	"files": [
