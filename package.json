@@ -1,50 +1,50 @@
 {
-	"name": "vite-plugin-xq-cp-dep",
-	"version": "1.1.2",
-	"description": "A vite plugin that copies all package.json 'dependencies' and project 'assets' into the public directory.一个将 package.json 的 dependencies 全部依赖包和项目 assets 自动复制到 public 目录的 Vite 插件。",
-	"type": "module",
-	"files": [
-		"dist"
-	],
-	"main": "./dist/index.mjs",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
-		}
-	},
-	"scripts": {
-		"build": "npx unbuild && npx xq-banner"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/xqkeji/vite-plugin-xq-cp-dep.git"
-	},
-	"keywords": [
-		"vite",
-		"vite-plugin",
-		"vite-cp",
-		"cp-dependencies-to-public",
-		"cp-to-public",
-		"cp-src-assets-to-public"
-	],
-	"author": "xqkeji.cn",
-	"license": "SSPL-1.0",
-	"homepage": "http://xqkeji.cn/",
-	"devDependencies": {
-		"@types/node": "^26.5.1",
-		"typescript": "^5.9.2",
-		"unbuild": "^3.6.1",
-		"vite": "^8.0.0",
-		"xq-banner": "^1.0.10"
-	},
-	"peerDependencies": {
-		"vite": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
-	},
-	"engines": {
-		"node": ">=18.0.0"
-	}
+  "name": "vite-plugin-xq-cp-dep",
+  "version": "1.1.3",
+  "description": "A vite plugin that copies all package.json 'dependencies' and project 'assets' into the public directory.一个将 package.json 的 dependencies 全部依赖包和项目 assets 自动复制到 public 目录的 Vite 插件。",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "npx unbuild && npx xq-banner"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xqkeji/vite-plugin-xq-cp-dep.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "vite-cp",
+    "cp-dependencies-to-public",
+    "cp-to-public",
+    "cp-src-assets-to-public"
+  ],
+  "author": "xqkeji.cn",
+  "license": "Apache-2.0",
+  "homepage": "http://xqkeji.cn/",
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "typescript": "^5.9.2",
+    "unbuild": "^3.6.1",
+    "vite": "^8.0.0",
+    "xq-banner": "^1.0.10"
+  },
+  "peerDependencies": {
+    "vite": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
