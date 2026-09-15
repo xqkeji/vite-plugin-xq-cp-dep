@@ -1,10 +1,13 @@
 import {  Plugin } from 'vite';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 
-const pkg_file = path.resolve(__dirname, '../../../package.json'); 
+const _dirname = dirname(fileURLToPath(import.meta.url));
+const pkg_file = path.resolve(_dirname, '../../../package.json'); 
 const pkg = JSON.parse(fs.readFileSync(pkg_file, 'utf8'))
-const node_modules_path=path.resolve(__dirname, '../../../node_modules'); 
+const node_modules_path=path.resolve(_dirname, '../../../node_modules'); 
 
 function xqCpDep():Plugin{
 	return {
